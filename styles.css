@@ -40,3 +40,11 @@ p4{
     top: 470px;
     left: 670px
 }
+
+img{
+    position: absolute;
+    bottom: 5px;
+    left: 400px;
+    
+    
+}
