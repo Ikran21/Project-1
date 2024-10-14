@@ -48,3 +48,32 @@ img{
     
     
 }
+
+.settings-content{
+    padding-top: 300px;
+    text-align: center;
+    font-family: sans-serif;
+}
+.exit-content{
+    padding-top: 300px;
+    text-align: center;
+    font-family: sans-serif;
+}
+textarea{
+    height: 100px;
+    width: 250px;
+    border-radius: 25px;;
+    box-shadow: 10px 10px black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+#button{
+    margin: 10px 10px 1px 210px;
+    background-color: red;
+    border-radius: 45px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
