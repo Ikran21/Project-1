@@ -1,0 +1,175 @@
+body {
+    font-family: sans-serif;
+    background-color: darkolivegreen;
+    margin: 0;
+}
+.game-container{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(0.2);
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(1); /* Grows the card to full size */
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes moveCard {
+    0% {
+        transform: translate(0px, 0px); /* Initial position */
+    }
+    100% {
+        transform: translate(150px, -275px); /* Final position */
+    }
+}
+@keyframes moveCard2 {
+    0% {
+        transform: translate(0px, 0px); /* Initial position */
+    }
+    100% {
+        transform: translate(250px, 275px); /* Final position */
+    }
+}
+
+
+.card-front1 {
+    animation: grow 0.1s forwards;
+  
+}
+.card-front2 {
+    animation: grow 1s forwards;
+    animation-delay: 0.2; /* Starts after the first card finishes */
+   animation: moveCard 3s forwards 2s; 
+}
+
+.card-front3 {
+    animation: grow 1s forwards;
+    animation-delay: 0.3s; /* Starts after the second card finishes */
+}
+
+.card-front4 {
+    animation: grow 1s forwards;
+    animation-delay: 0.4s; /* Starts after the third card finishes */
+}
+.card-front5 {
+    animation: grow 1s ;
+    animation-delay: 0.5s; /* Starts after the third card finishes */
+    
+}
+
+.opp-card1 {
+    animation: grow 0.5s forwards;
+}
+.opp-card2 {
+    animation: grow 1s forwards;
+    animation-delay: 0.1; /* Starts after the first card finishes */
+}
+.card-inner-opp-3{
+    animation: grow 1s forwards;
+    animation-delay: 0.2s; /* Grow animation */
+    animation: moveCard2 3s forwards 1.5s; 
+}
+.opp-card4{
+    animation: grow 1s forwards;
+    animation-delay: 0.3s; /* Starts after the third card finishes */
+}
+
+
+.player-area{
+    display:flex;
+}
+
+.opponent-area{
+    display:flex;
+}
+
+.player-card {
+    width: 100px;
+    height: 150px;
+    perspective: 1000px;
+} 
+  
+.opponent-card {
+    width: 100px;
+    height: 150px;
+    perspective: 1000px;
+} 
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+ .card-inner-opp {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+/*  */
+ .card-inner-opp-3 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+  }
+
+.player-card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+
+.opponent-card:hover .card-inner-opp {
+    transform: rotateY(180deg);
+  }
+/**/
+.opponent-card:hover .card-inner-opp-3 {
+    transform: rotateY(180deg);
+ }
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+.card-back {
+    transform: rotateY(180deg);
+ }
+
+ .card-back-opp, .card-front-opp {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+.card-front-opp {
+    transform: rotateY(180deg);
+ }
+
+ .card-back-opp-3, .card-front-opp-3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  .card-front-opp-3{
+    transform: rotateY(180deg);
+ }
