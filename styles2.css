@@ -3,14 +3,29 @@ body {
     background-color: darkolivegreen;
     margin: 0;
 }
+a{
+    text-decoration: none;
+    color: black;
+    }
+a:visited { 
+    text-decoration: none; 
+    color:red;
+  } 
 .game-container{
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-
+    align-items: center; 
+}
+.opponent-content {
+    display: block;
+    text-align: center;
+    color: white;
+}
+.opponent-content img {
+   padding-left: 150px;
 }
 
+/* Animations */
 @keyframes grow {
     0% {
         transform: scale(0.2);
@@ -21,69 +36,75 @@ body {
         opacity: 1; /* Fully visible */
     }
 }
+@keyframes visable {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+    }
+}
+
 @keyframes moveCard {
     0% {
         transform: translate(0px, 0px); /* Initial position */
     }
     100% {
-        transform: translate(150px, -275px); /* Final position */
+        transform: translate(300px, 275px); /* Final position */
+        opacity: 0;
     }
 }
-@keyframes moveCard2 {
-    0% {
-        transform: translate(0px, 0px); /* Initial position */
+
+@keyframes bookglow {
+    0%{
+        box-shadow: none;
     }
     100% {
-        transform: translate(250px, 275px); /* Final position */
+    box-shadow: 0 0 20px white;
     }
 }
 
 
 .card-front1 {
-    animation: grow 0.1s forwards;
+    animation: grow 1s forwards;
   
 }
 .card-front2 {
     animation: grow 1s forwards;
-    animation-delay: 0.2; /* Starts after the first card finishes */
-   animation: moveCard 3s forwards 2s; 
+    animation-delay: 0.3; /* Starts after the first card finishes */
 }
 
 .card-front3 {
     animation: grow 1s forwards;
-    animation-delay: 0.3s; /* Starts after the second card finishes */
+    animation-delay: 0.5s; /* Starts after the second card finishes */
 }
 
 .card-front4 {
-    animation: grow 1s forwards;
-    animation-delay: 0.4s; /* Starts after the third card finishes */
-}
-.card-front5 {
-    animation: grow 1s ;
-    animation-delay: 0.5s; /* Starts after the third card finishes */
-    
+    animation: visable 5s forwards;
+    animation-delay: 0.s; /* Starts after the third card finishes */
 }
 
 .opp-card1 {
-    animation: grow 0.5s forwards;
+    animation: 
+    grow 2s forwards 0.2s,       
+    moveCard 4s forwards ; 
 }
 .opp-card2 {
     animation: grow 1s forwards;
     animation-delay: 0.1; /* Starts after the first card finishes */
 }
-.card-inner-opp-3{
+.opp-card3{
     animation: grow 1s forwards;
-    animation-delay: 0.2s; /* Grow animation */
-    animation: moveCard2 3s forwards 1.5s; 
+    animation-delay: 0.5s; /* Grow animation */
 }
 .opp-card4{
     animation: grow 1s forwards;
-    animation-delay: 0.3s; /* Starts after the third card finishes */
+    animation-delay: 1s; /* Starts after the third card finishes */
 }
 
-
 .player-area{
-    display:flex;
+    display:flex; 
+    animation: bookglow 4s forwards;
 }
 
 .opponent-area{
@@ -119,17 +140,6 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
 
-/*  */
- .card-inner-opp-3 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-
-  }
-
 .player-card:hover .card-inner {
     transform: rotateY(180deg);
   }
@@ -137,10 +147,6 @@ body {
 .opponent-card:hover .card-inner-opp {
     transform: rotateY(180deg);
   }
-/**/
-.opponent-card:hover .card-inner-opp-3 {
-    transform: rotateY(180deg);
- }
 
 .card-front, .card-back {
     position: absolute;
@@ -152,7 +158,6 @@ body {
 .card-back {
     transform: rotateY(180deg);
  }
-
  .card-back-opp, .card-front-opp {
     position: absolute;
     width: 100%;
@@ -163,13 +168,12 @@ body {
 .card-front-opp {
     transform: rotateY(180deg);
  }
-
- .card-back-opp-3, .card-front-opp-3 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-  }
-  .card-front-opp-3{
-    transform: rotateY(180deg);
+ .player-content{
+    display: block;
+    text-align:center;
+    padding-left: 250px;
+    color: white;
+ }
+.go-fish-button:hover{
+    transform: scale(1.2); 
  }
