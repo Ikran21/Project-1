@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f4c89;
+ background-image: url("fish.jpg");
+    margin: 0;
+    padding: 20px;
+}
+.summary-container {
+    background-color: rgb(213, 213, 227);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    margin: auto;
+}
+h1 {
+    text-align: center;
+    color: #343a40;
+}
+h2 {
+    color: #495057;
+    margin-top: 20px;
+}
+p {
+    color: #6c757d;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+li {
+    margin: 5px 0;
+    color: #495057;
+}
